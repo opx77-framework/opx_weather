@@ -9,10 +9,12 @@ auto_start true
 
 permissions {
     "world.environment", -- Open77.environment.* (time, weather, per-bucket overrides)
+    "http.request", -- server: Open77.http.get (update check, Config.versionCheck)
 }
 
 server_scripts {
     "config.lua",
     "server/presets.lua",  -- weather catalogue + preset registry (Config.presets, RegisterPreset)
     "server/main.lua",     -- exports, override tracking, lifecycle
+    "server/version.lua",
 }
